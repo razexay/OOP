@@ -1,7 +1,5 @@
 <?php
 
-require_once 'dbconnect.php';
-
 class Book
 {
 
@@ -27,6 +25,11 @@ class Book
         $stmt->execute();
 
         return $stmt->fetchAll();
+    }
+
+    public function update()
+    {
+        global $pdo;
     }
 
     public function delete()

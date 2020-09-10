@@ -2,35 +2,40 @@
 
 require_once 'dbconnect.php';
 
-    class Book{
+class Book
+{
 
-        public static function findById($id){
+    public static function findById($id)
+    {
 
-            global $pdo;
+        global $pdo;
 
-            $stmt = $pdo->prepare('SELECT * FROM books WHERE id=:id');
-            $stmt->setFetchMode(PDO::FETCH_CLASS, 'book');
-            $stmt->execute(['id' => $id]);
-            
+        $stmt = $pdo->prepare('SELECT *  FROM books WHERE id=:id');
+        $stmt->setFetchMode(PDO::FETCH_CLASS, 'Book');
+        $stmt->execute(['id' => $id]);
 
-            return $stmt->fetch();
-        }
-
-        public static function findAll(){
-
-            global $pdo;
-
-            $stmt = $pdo->prepare('SELECT * FROM books');
-            $stmt->setFetchMode(PDO::FETCH_CLASS, 'book');
-            $stmt->execute();
-
-            return $stmt->fetchall();
-
-        }
-        
-        public function delete () {
-
-            global
-            
-        }
+        return $stmt->fetch();
     }
+
+    public static function findAll()
+    {
+
+        global $pdo;
+
+        $stmt = $pdo->prepare('SELECT * FROM books');
+        $stmt->setFetchMode(PDO::FETCH_CLASS, 'Book');
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
+
+    public function delete()
+    {
+
+        global $pdo;
+
+        $stmt = $pdo->prepare('DELETE FROM books WHERE id=:id');
+
+        return $stmt->execute(['id' => $this->id]);
+    }
+}

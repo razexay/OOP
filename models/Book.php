@@ -30,6 +30,10 @@ class Book
     public function update()
     {
         global $pdo;
+
+        $stmt = $pdo->prepare('UPDATE books SET title =:title WHERE id=:id');
+
+        return $stmt->execute(['title' => $this->title, 'id' => $this->id]);
     }
 
     public function delete()

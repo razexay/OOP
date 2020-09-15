@@ -31,7 +31,7 @@ class Book
     {
         global $pdo;
 
-        $stmt = $pdo->prepare('UPDATE books SET title =:title WHERE id=:id');
+        $stmt = $pdo->prepare('UPDATE books SET title=:title WHERE id=:id');
 
         return $stmt->execute(['title' => $this->title, 'id' => $this->id]);
     }

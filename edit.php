@@ -12,6 +12,6 @@ $oBook->title = $title;
 
 $oBook->update();
 
-header('Location: book.php');
+header('Location: index.php');
 
 exit;

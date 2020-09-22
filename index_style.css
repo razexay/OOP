@@ -1,7 +1,92 @@
-body{
-    background-color: hsl(0, 0, 0%);
+html{
+    background-color: hsla(0, 0%, 19%, 1);
+    position: relative;
 }
 
-li{
-    color: rgb(52, 255, 194);
+body{
+    font-size: 50px;
 }
+
+div {
+    position: absolute;
+    left: 25%;
+    right: 25%;
+    width: 50%;
+    height: 100px;
+    text-align: center;
+}
+
+h1 {
+  font: 400 40px/1.5 Helvetica, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: rgb(112, 234, 255)
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+  border-bottom: 1px solid #cccccc29;
+}
+
+li:last-child {
+  border: none;
+}
+
+li a {
+  text-decoration: none;
+  color: white;
+  width: 200px;
+
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+}
+
+li a:hover {
+  font-size: 30px;
+  -webkit-animation: colorchange 10s infinite alternate;
+}
+
+@-webkit-keyframes colorchange {
+    0% {
+      color: blue;
+    }
+    10% {
+      color: #8e44ad;
+    }
+    20% {
+      color: #1abc9c;
+    }
+    30% {
+      color: #d35400;
+    }
+    40% {
+      color: blue;
+    }
+    50% {
+      color: #34495e;
+    }
+    60% {
+      color: blue;
+    }
+    70% {
+      color: #2980b9;
+    }
+    80% {
+      color: #f1c40f;
+    }
+    90% {
+      color: #2980b9;
+    }
+    100% {
+      color: pink;
+    }
+  }
